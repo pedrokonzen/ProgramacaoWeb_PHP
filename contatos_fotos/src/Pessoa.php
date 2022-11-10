@@ -63,8 +63,8 @@ class Pessoa implements ActiveRecord{
     public function delete():bool{
         $conexao = new MySQL();
         $sql = "DELETE FROM pessoas WHERE id = {$this->id}";
-        unlink($this->foto);
         return $conexao->executa($sql);
+        unlink($this->foto);
     }
 
     public static function find($id):Pessoa{
